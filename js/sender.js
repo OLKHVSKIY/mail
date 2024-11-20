@@ -4,9 +4,9 @@ let allSenders = [];
 
 // Функция для получения списка отправителей
 async function fetchSenders() {
-    const response = await fetch('http://127.0.0.1:8000/api/get_senders');
+    const response = await fetch('/api/get_senders');
     if (!response.ok) {
-        throw new Error('Network response was not ok');
+        throw new Error('Ответ сети был неудовлетворительным:');
     }
     const data = await response.json();
     allSenders = data;
@@ -46,6 +46,6 @@ window.addEventListener('load', () => {
     fetchSenders().then(() => {
         console.log('Senders loaded');
     }).catch(error => {
-        console.error('There was a problem with the fetch operation:', error);
+        console.error('Возникла проблема с операцией выборки:', error);
     });
 });

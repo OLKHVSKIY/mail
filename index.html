@@ -4,7 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>МИАЦ</title>
-    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="icon" href="./img/icons/">
+    <link rel="stylesheet" href="./css/base.css" />
+    <link rel="stylesheet" href="./css/header.css" />
+    <link rel="stylesheet" href="./css/table.css" />
+    <link rel="stylesheet" href="./css/modal.css" />
+    <link rel="stylesheet" href="./css/search.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 </head>
@@ -13,61 +18,44 @@
         <div class="container">
             <nav class="header__nav nav">
                 <div class="nav__logo">
-                    <a href="#!" class="logo">МИАЦ</a>
+                    <a href="#!" class="logo"><img src="./img/icons/miac.png" alt="miac"></a>
                 </div>
                 <ul class="nav-list">
-                    <li class="nav-list__item">
-                        <a href="#furniture" class="nav-list__link nav-list__link--dropdown">Меню</a>
-                        <div class="nav-list__sub-nav">
-                            <ul class="sub-nav" id="sub-nav-list">
-                                <li class="sub-nav__item"><a href="#!" class="sub-nav__link">Заглушка</a></li>
-                                <li class="sub-nav__item"><a href="#!" class="sub-nav__link">Заглушка</a></li>
-                                <li class="sub-nav__item"><a href="#!" class="sub-nav__link">Заглушка</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="nav-list__item">
-                        <a href="#!" class="nav-list__link">Заглушка</a>
-                    </li>
                     <li class="nav-list__item">
                         <a href="#!" class="nav-list__link period-trigger">Период</a>
                     </li>
                     <li class="nav-list__item">
-                        <a href="#!" class="nav-list__link sort-trigger">Сортировка</a>
+                        <a href="#!" id="apply-filter" class="apply-filter nav-list__link">Обновить таблицу</a>
+                    </li>
+                    <li class="nav-list__item">
+                        <a href="#!" id="logoutButton" class="nav-list__link sort-trigger">Выйти</a>
                     </li>
                 </ul>
             </nav>
-            
-            <div id="calendar-container" style="display: none;">
-                <input type="text" id="datetime-picker" placeholder="Выберите дату и время">
-                <button class="sort-button">Сортировать</button>
-            </div>
 
             <div id="modal" class="modal" style="display: none;">
                 <div class="modal-content">
                     <span class="close">&times;</span>
                     <h2>Выберите период</h2>
                     <div class="date-pickers">
-                        <input type="text" id="start-date" placeholder="Начало">
-                        <input type="text" id="end-date" placeholder="Конец">
+                        <input type="text" id="start-date" class="start-date" placeholder="Начало">
+                        <input type="text" id="end-date" class="end-date" placeholder="Конец">
                     </div>
-                    <button id="apply-filter">Применить</button>
+                    <button id="clean-filter" class="apply-filter">Очистить</button>
                 </div>
             </div>
 
             <div class="header__content">
-                <!-- <h1 class="header__title">
-                    Почта
-                </h1> -->
                 <div class="header__search">
                     <form action="" class="search-form">
                         <input
+                            id="input-sender"
                             placeholder="Поиск по отправителем"
                             type="text"
                             class="search-form__input"
                             autocomplete="off"
                         />
-                        <button class="search-form__btn">
+                        <button type="button" class="search-form__btn">
                             <img src="./img/icons/search.svg" alt="Поиск" />
                         </button>
                     </form>
@@ -77,6 +65,11 @@
         </div>
 
         <div class="container-table">
+            <div class="pagination">
+                <img src="./img/icons/slider-left.svg" id="prev-page" alt="Предыдущая">
+                <input type="number" id="page-number" min="1" value="1">
+                <img src="./img/icons/slider-right.svg" id="next-page" alt="Следующая">
+            </div>
             <div class="table-wrapper">
                 <table id="messages-table" class="centered-table">
                     <thead>
@@ -85,10 +78,10 @@
                             <th>Отправитель</th>
                             <th>Получатель</th>
                             <th>IP</th>
-                            <th>Размер</th>
+                            <th class="status-size-column">Размер</th>
                             <th>Проверка</th>
                             <th>Data Box</th>
-                            <th>Статус</th>
+                            <th class="status-size-column">Статус</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -97,12 +90,13 @@
                 </table>
             </div>
         </div>
+
         <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     </header>
 
-    <script src="./js/calendar.js"></script>
-    <script src="./js/sender.js"></script>
     <script src="./js/table.js"></script>
-
+    <script src="./js/sender.js"></script>
+    <script src="./js/calendar.js"></script>
+    <script src="./js/logout.js"></script>
 </body>
 </html>
