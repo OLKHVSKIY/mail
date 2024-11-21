@@ -76,14 +76,14 @@ function displayMessages(messages) {
     messages.forEach(message => {
         const row = document.createElement('tr');
         row.innerHTML = `
-            <td>${formatDate(message.date)}</td>
-            <td>${message.sender}</td>
-            <td>${message.recipient}</td>
-            <td>${message.ip}</td>
+            <td data-databox-column>${formatDate(message.date)}</td>
+            <td sender-column>${message.sender}</td>
+            <td sender-recipient-column>${message.recipient}</td>
+            <td ip-column>${message.ip}</td>
             <td class="status-size-column">${formatSize(message.size)}</td>
-            <td>${message.passed}</td>
-            <td>${formatDate(message.data_box)}</td>
-            <td class="status-size-column">${formatString(message.status)}</td>
+            <td check-column>${message.passed}</td>
+            <td data-databox-column>${formatDate(message.data_box)}</td>
+            <td class="status-column">${formatString(message.status)}</td>
         `;
         tbody.appendChild(row);
     });
@@ -101,6 +101,32 @@ window.addEventListener('load', () => {
 // Обработчик для кнопки "Обновить таблицу"
 document.getElementById('apply-filter').addEventListener('click', () => {
     fetchMessages();
+});
+
+// Обработчик для кнопки "Обновить таблицу"
+document.getElementById('apply-filter').addEventListener('click', () => {
+    fetchMessages();
+});
+
+// Обработчик для клавиши Enter на поле ввода даты начала
+document.getElementById('start-date').addEventListener('keypress', (event) => {
+    if (event.key === 'Enter') {
+        fetchMessages();
+    }
+});
+
+// Обработчик для клавиши Enter на поле ввода даты окончания
+document.getElementById('end-date').addEventListener('keypress', (event) => {
+    if (event.key === 'Enter') {
+        fetchMessages();
+    }
+});
+
+// Обработчик для клавиши Enter на поле ввода отправителя
+document.getElementById('input-sender').addEventListener('keypress', (event) => {
+    if (event.key === 'Enter') {
+        fetchMessages();
+    }
 });
 
 // Обработчик для кнопки "Предыдущая"

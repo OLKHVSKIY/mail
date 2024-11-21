@@ -19,7 +19,7 @@
       aspect-ratio: unset;
     }
   }
-  
+
   .header__nav {
     margin-bottom: clamp(20px, 0.071rem + 5.89vw, 86px);
   }
@@ -163,4 +163,8 @@
   
   .sub-nav a:hover {
     color: var(--accent);
+  }
+
+  .sub-nav{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }

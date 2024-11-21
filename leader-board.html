@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>МИАЦ</title>
+    <link rel="icon" href="./img/icons/miac_short.png">
+    <link rel="stylesheet" href="./css/base.css" />
+    <link rel="stylesheet" href="./css/header.css" />
+    <link rel="stylesheet" href="./css/table.css" />
+    <link rel="stylesheet" href="./css/modal.css" />
+    <link rel="stylesheet" href="./css/search.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <style>
+        .table-container {
+            display: flex;
+            justify-content: space-between;
+            padding: 0 60px;
+        }
+
+        .table-wrapper {
+            width: 40%; /* одинаковый размер таблиц */
+        }
+
+        .table-wrapper h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 40px;
+        }
+        .sender-column, .recipient-column{
+            width: 600px;
+        }
+        .quantity-column{
+            width: 100px;
+        }
+
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="header__nav nav">
+                <div class="nav__logo">
+                    <a href="#!" class="logo"><img src="./img/icons/miac.png" alt="miac"></a>
+                </div>
+                <ul class="nav-list">
+                    <li class="nav-list__item">
+                        <a href="#furniture" class="nav-list__link nav-list__link--dropdown">Меню</a>
+                        <div class="nav-list__sub-nav">
+                            <ul class="sub-nav" id="sub-nav-list">
+                                <li class="sub-nav__item"><a href="main.html" class="sub-nav__link">Главная</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-list__item">
+                        <a href="#!" class="nav-list__link period-trigger">Период</a>
+                    </li>
+                    <li class="nav-list__item">
+                        <a href="#!" id="apply-filter" class="apply-filter nav-list__link">Обновить таблицу</a>
+                    </li>
+                    <li class="nav-list__item">
+                        <a href="#!" id="logoutButton" class="nav-list__link sort-trigger">Выйти</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div id="modal" class="modal" style="display: none;">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h2>Выберите период</h2>
+                    <div class="date-pickers">
+                        <input type="text" id="start-date" class="start-date" placeholder="Начало">
+                        <input type="text" id="end-date" class="end-date" placeholder="Конец">
+                    </div>
+                    <button id="clean-filter" class="apply-filter">Очистить</button>
+                </div>
+            </div>
+
+            <div class="header__content">
+                <h1 class="header__title">Leader board</h1>
+                <!-- <div class="header__search">
+                    <form action="" class="search-form">
+                        <input
+                            id="input-sender"
+                            placeholder="Поиск по отправителем"
+                            type="text"
+                            class="search-form__input"
+                            autocomplete="off"
+                        />
+                        <button type="button" class="search-form__btn">
+                            <img src="./img/icons/search.svg" alt="Поиск" />
+                        </button>
+                    </form>
+                    <div class="search-results" style="display: none;"></div>
+                </div> -->
+            </div>
+        </div>
+
+        <div class="container-table">
+            <div class="table-container">
+                <div class="table-wrapper">
+                    <h1>Отправители</h1>
+                    <table id="senders-table" class="centered-table senders-table">
+                        <thead>
+                            <tr>
+                                <th class="sender-column">Отправитель</th>
+                                <th class="quantity-column">Количество</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- данные с таблички JS -->
+                        </tbody>
+                    </table>
+                </div>
+                <div class="table-wrapper">
+                    <h1>Получатели</h1>
+                    <table id="recipients-table" class="centered-table recipients-table">
+                        <thead>
+                            <tr>
+                                <th class="recipient-column">Получатель</th>
+                                <th class="quantity-column">Количество</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- данные с таблички JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    </header>
+
+    <!-- <script src="./js/loginCheck.js"></script> -->
+    <script src="./js/table.js"></script>
+    <script src="./js/sender.js"></script>
+    <script src="./js/calendar.js"></script>
+    <script src="./js/logout.js"></script>
+</body>
+</html>

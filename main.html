@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>МИАЦ</title>
-    <link rel="icon" href="./img/icons/">
+    <link rel="icon" href="./img/icons/miac_short.png">
     <link rel="stylesheet" href="./css/base.css" />
     <link rel="stylesheet" href="./css/header.css" />
     <link rel="stylesheet" href="./css/table.css" />
@@ -21,6 +21,14 @@
                     <a href="#!" class="logo"><img src="./img/icons/miac.png" alt="miac"></a>
                 </div>
                 <ul class="nav-list">
+                    <li class="nav-list__item">
+                        <a href="#furniture" class="nav-list__link nav-list__link--dropdown">Меню</a>
+                        <div class="nav-list__sub-nav">
+                            <ul class="sub-nav" id="sub-nav-list">
+                                <li class="sub-nav__item"><a href="leader-board.html" class="sub-nav__link">Leader board</a></li>
+                            </ul>
+                        </div>
+                    </li>
                     <li class="nav-list__item">
                         <a href="#!" class="nav-list__link period-trigger">Период</a>
                     </li>
@@ -46,6 +54,7 @@
             </div>
 
             <div class="header__content">
+                <h1 class="header__title">Главная</h1>
                 <div class="header__search">
                     <form action="" class="search-form">
                         <input
@@ -74,14 +83,14 @@
                 <table id="messages-table" class="centered-table">
                     <thead>
                         <tr>
-                            <th>Дата</th>
-                            <th>Отправитель</th>
-                            <th>Получатель</th>
-                            <th>IP</th>
-                            <th class="status-size-column">Размер</th>
-                            <th>Проверка</th>
-                            <th>Data Box</th>
-                            <th class="status-size-column">Статус</th>
+                            <th class="data-databox-column">Дата</th>
+                            <th class="sender-recipient-column">Отправитель</th>
+                            <th class="sender-recipient-column">Получатель</th>
+                            <th class="ip-column">IP</th>
+                            <th class="size-column">Размер</th>
+                            <th class="check-column">Проверка</th>
+                            <th class="data-databox-column">Data Box</th>
+                            <th class="status-column">Статус</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -94,6 +103,7 @@
         <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     </header>
 
+    <!-- <script src="./js/loginCheck.js"></script> -->
     <script src="./js/table.js"></script>
     <script src="./js/sender.js"></script>
     <script src="./js/calendar.js"></script>
