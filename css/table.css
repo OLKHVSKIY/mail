@@ -1,33 +1,35 @@
-.size-column, .sender-recipient-column, .ip-column, .data-databox-column, .status-column, .check-column{
+#messages-table {
+  width: 100%;
+  table-layout: fixed; /* Фиксированная ширина столбцов */
+}
+
+.size-column, .sender-recipient-column, .ip-column, .data-databox-column, .status-column, .check-column {
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap;
 }
+
+.data-databox-column {
+  width: 70px !important; /* принудительное применение */
+}
+
+.sender-recipient-column {
+  width: 450px;
+}
+
+.ip-column {
+  width: 130px !important;
+}
+
 .size-column {
-    min-width: 110px;
-    max-width: 200px;
-  }
-
-.sender-recipient-column{
-  min-width: 400px;
-  max-width: 520px;
+  width: 110px !important;
 }
 
-.ip-column{
-  min-width: 130px;
-  max-width: 150px;
+.status-column {
+  width: 177px !important;
 }
 
-.data-databox-column{
-  min-width: 73px;
-}
-
-.status-column{
-  min-width: 177px;
-}
-
-.check-column{
-  min-width: 107px;
+.check-column {
+  width: 110px !important;
 }
   
   .centered-table {

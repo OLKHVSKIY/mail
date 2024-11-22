@@ -14,6 +14,7 @@
     font-size: 40px;
 }
 .sender-column, .recipient-column{
+    height: 55px;
     width: 600px;
 }
 .quantity-column{
@@ -42,4 +43,8 @@
 
 .filter-buttons a.active span {
     color: #e58411; 
+}
+
+.sender-column, .recipient-column {
+    cursor: pointer;
 }
