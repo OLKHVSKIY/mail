@@ -1,5 +1,4 @@
 @import "./../fonts/Gilroy/stylesheet.css";
-/* Reset and base styles  */
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Inter:wght@400;600&display=swap");
 * {
   padding: 0px;
@@ -13,7 +12,6 @@
   box-sizing: border-box;
 }
 
-/* Links */
 a, a:link, a:visited {
   text-decoration: none;
 }
@@ -22,7 +20,6 @@ a:hover {
   text-decoration: none;
 }
 
-/* Common */
 aside, nav, footer, header, section, main {
   display: block;
 }
@@ -49,7 +46,6 @@ address {
   font-style: normal;
 }
 
-/* Form */
 input, textarea, button, select {
   font-family: inherit;
   font-size: inherit;
@@ -88,21 +84,13 @@ legend {
 }
 
 :root {
-  --text-color: #1e1e1e;
-  --text-muted: #8d8d8d;
-  --text-card-dark-blue: #0d1b39;
   --accent: #e58411;
   --header-text-color: rgba(255, 255, 255, 0.759);
-  --footer-accent: #f6973f;
   --footer-bg: #2d2f33;
-  --footer-text-color: rgba(255, 255, 255, 0.8);
   --ui-orange: #e58411;
   --ui-biruza: #00d6c9;
-  --ui-gray: #7c7c7c;
   --ui-dark-blue: #e5861179;
   --font-main: "Gilroy", sans-serif;
-  --font-cards: "Inter", sans-serif;
-  --font-footer-accent: "DM Sans", sans-serif;
 }
 
 html,
@@ -236,22 +224,6 @@ body {
   padding: 10px 0;
 }
 
-.nav-list__link {
-  transition: opacity 0.1s ease-in;
-}
-.nav-list__link:hover {
-  opacity: 0.7;
-}
-.nav-list__link--dropdown {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-.nav-list__link--dropdown::after {
-  content: url("./../img/icons/arrow-down.svg");
-  height: 18px;
-}
-
 .nav-list__sub-nav {
   opacity: 0;
   width: 160px;
@@ -318,15 +290,6 @@ body {
   font-weight: 400;
 }
 
-.search-form__btn {
-  flex-shrink: 0;
-  width: 40px;
-  height: 40px;
-  border-radius: 24px;
-  background: var(--accent);
-}
-
-/* Добавленные стили для таблицы */
 .centered-table {
   width: 100%;
   max-width: 800px;
@@ -469,19 +432,6 @@ body.modal-open {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
-}
-
-#apply-filter {
-  padding: 10px 20px;
-  background-color: #e58411;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-#apply-filter:hover {
-  background-color: #e39536;
 }
 
 h2{

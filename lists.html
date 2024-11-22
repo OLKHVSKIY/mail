@@ -1,44 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>МИАЦ | Leader Board</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>МИАЦ | Списки</title>
     <link rel="icon" href="./img/icons/miac_short.png">
-    <link rel="stylesheet" href="./css/base.css" />
-    <link rel="stylesheet" href="./css/header.css" />
-    <link rel="stylesheet" href="./css/table.css" />
-    <link rel="stylesheet" href="./css/modal.css" />
-    <link rel="stylesheet" href="./css/search.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/table.css">
+    <link rel="stylesheet" href="./css/modal.css">
+    <link rel="stylesheet" href="./css/search.css">
+    <link rel="stylesheet" href="./css/gir.css">
+    <link rel="stylesheet" href="./css/lists-table.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-    <style>
-        .table-container {
-            display: flex;
-            justify-content: space-between;
-            padding: 0 60px;
-        }
-
-        .table-wrapper {
-            width: 40%; /* одинаковый размер таблиц */
-        }
-
-        .table-wrapper h1 {
-            text-align: center;
-            margin-bottom: 20px;
-            font-size: 40px;
-        }
-        .sender-column, .recipient-column{
-            width: 600px;
-        }
-        .quantity-column{
-            width: 100px;
-        }
-
-    </style>
+    <script src="https://www.expertplus.ru/UserFiles/Image/content/new_year/10.js"></script>
 </head>
 <body>
     <header class="header">
+        <div class="gir_1" id="gir"></div>
+        <style>
+            #gir {
+                background-image:url('./img/gir.png');
+            }  
+        </style>
+
         <div class="container">
             <nav class="header__nav nav">
                 <div class="nav__logo">
@@ -53,9 +39,9 @@
                             </ul>
                         </div>
                     </li>
-                    <li class="nav-list__item">
+                    <!-- <li class="nav-list__item">
                         <a href="#!" class="nav-list__link period-trigger">Период</a>
-                    </li>
+                    </li> -->
                     <li class="nav-list__item">
                         <a href="#!" id="apply-filter" class="apply-filter nav-list__link">Обновить таблицу</a>
                     </li>
@@ -78,7 +64,7 @@
             </div>
 
             <div class="header__content">
-                <h1 class="header__title">Leader board</h1>
+                <h1 class="header__title">Списки</h1>
                 <!-- <div class="header__search">
                     <form action="" class="search-form">
                         <input
@@ -99,12 +85,18 @@
 
         <div class="container-table">
             <div class="table-container">
-                <div class="table-wrapper">
+                <div class="table-wrapper" data-table="senders">
                     <h1>Отправители</h1>
+                    <div class="filter-buttons">
+                        <a href="#" data-days="1" data-table="senders"><span>1 д.</span></a>
+                        <a href="#" data-days="7" data-table="senders"><span>7 д.</span></a>
+                        <a href="#" data-days="14" data-table="senders"><span>14 д.</span></a>
+                        <a href="#" data-days="30" data-table="senders"><span>30 д.</span></a>
+                    </div>
                     <table id="senders-table" class="centered-table senders-table">
                         <thead>
                             <tr>
-                                <th class="sender-column">Отправитель</th>
+                                <th class="sender-column">Отправители</th>
                                 <th class="quantity-column">Количество</th>
                             </tr>
                         </thead>
@@ -113,12 +105,19 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="table-wrapper">
+
+                <div class="table-wrapper" data-table="recipients">
                     <h1>Получатели</h1>
+                    <div class="filter-buttons">
+                        <a href="#" data-days="1" data-table="recipients"><span>1 д.</span></a>
+                        <a href="#" data-days="7" data-table="recipients"><span>7 д.</span></a>
+                        <a href="#" data-days="14" data-table="recipients"><span>14 д.</span></a>
+                        <a href="#" data-days="30" data-table="recipients"><span>30 д.</span></a>
+                    </div>
                     <table id="recipients-table" class="centered-table recipients-table">
                         <thead>
                             <tr>
-                                <th class="recipient-column">Получатель</th>
+                                <th class="recipient-column">Получатели</th>
                                 <th class="quantity-column">Количество</th>
                             </tr>
                         </thead>
@@ -134,9 +133,8 @@
     </header>
 
     <!-- <script src="./js/loginCheck.js"></script> -->
-    <script src="./js/table.js"></script>
-    <script src="./js/sender.js"></script>
-    <script src="./js/calendar.js"></script>
     <script src="./js/logout.js"></script>
+    <script src="./js/lists-table.js"></script>
+    <script src="./js/gir.js"></script>
 </body>
 </html>

@@ -1,20 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>МИАЦ | Главная</title>
     <link rel="icon" href="./img/icons/miac_short.png">
-    <link rel="stylesheet" href="./css/base.css" />
-    <link rel="stylesheet" href="./css/header.css" />
-    <link rel="stylesheet" href="./css/table.css" />
-    <link rel="stylesheet" href="./css/modal.css" />
-    <link rel="stylesheet" href="./css/search.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/table.css">
+    <link rel="stylesheet" href="./css/modal.css">
+    <link rel="stylesheet" href="./css/search.css">
+    <link rel="stylesheet" href="./css/gir.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://www.expertplus.ru/UserFiles/Image/content/new_year/10.js"></script>
 </head>
 <body>
     <header class="header">
+        <div class="gir_1" id="gir"></div>
+        <style>
+            #gir {
+                background-image:url('./img/gir.png');
+            }  
+        </style>
+
         <div class="container">
             <nav class="header__nav nav">
                 <div class="nav__logo">
@@ -25,7 +34,7 @@
                         <a href="#furniture" class="nav-list__link nav-list__link--dropdown">Меню</a>
                         <div class="nav-list__sub-nav">
                             <ul class="sub-nav" id="sub-nav-list">
-                                <li class="sub-nav__item"><a href="leader-board.html" class="sub-nav__link">Leader board</a></li>
+                                <li class="sub-nav__item"><a href="lists.html" class="sub-nav__link">Списки</a></li>
                             </ul>
                         </div>
                     </li>
@@ -59,13 +68,13 @@
                     <form action="" class="search-form">
                         <input
                             id="input-sender"
-                            placeholder="Поиск по отправителем"
+                            placeholder="Поиск по отправителям"
                             type="text"
                             class="search-form__input"
                             autocomplete="off"
-                        />
-                        <button type="button" class="search-form__btn">
-                            <img src="./img/icons/search.svg" alt="Поиск" />
+                        >
+                        <button type="button" id="clear-button" class="cross">
+                            <img src="./img/icons/icon-cross.png" alt="Поиск" />
                         </button>
                     </form>
                     <div class="search-results" style="display: none;"></div>
@@ -108,5 +117,6 @@
     <script src="./js/sender.js"></script>
     <script src="./js/calendar.js"></script>
     <script src="./js/logout.js"></script>
+    <script src="./js/gir.js"></script>
 </body>
 </html>

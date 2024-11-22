@@ -31,12 +31,17 @@
     font-weight: 400;
   }
   
-  .search-form__btn {
+  .cross {
     flex-shrink: 0;
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
     border-radius: 24px;
     background: var(--accent);
+    transition: opacity 0.1s ease-in;
+  }
+
+  .cross:hover {
+    background-color: #ed9420;
   }
   
   .search-results {
@@ -60,11 +65,6 @@
     transition: background-color 0.2s ease;
     color: #fff;
     text-align: left;
-  }
-  
-  .cross{
-    width: 29px;
-    height: 29px;
   }
   
   .search-results div:hover {
