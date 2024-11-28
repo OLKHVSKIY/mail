@@ -75,14 +75,6 @@ button::-moz-focus-inner {
   border: 0;
 }
 
-label {
-  cursor: pointer;
-}
-
-legend {
-  display: block;
-}
-
 :root {
   --accent: #e58411;
   --header-text-color: rgba(255, 255, 255, 0.759);
