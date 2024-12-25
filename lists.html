@@ -18,12 +18,32 @@
 </head>
 <body>
     <header class="header">
-        <!-- <div class="gir_1" id="gir"></div>
+        <div class="gir_1" id="gir"></div>
         <style>
             #gir {
                 background-image:url('./img/gir.png');
             }  
-        </style> -->
+            #gir {
+                position: absolute;
+                top: 0;
+                left: 0;
+                background-image:url('./img/gir.png');
+                height: 62px;
+                width: 100%;
+                overflow: hidden;
+                z-index: 1;
+                pointer-events: none
+            }  
+            .gir_1 {
+                background-position: 0 0
+            }  
+            .gir_2 {
+                background-position: 0 -62px
+            }  
+            .gir_3 {
+                background-position: 0 -124px
+            }
+        </style>
 
         <div class="container">
             <nav class="header__nav nav">
@@ -36,6 +56,7 @@
                         <div class="nav-list__sub-nav">
                             <ul class="sub-nav" id="sub-nav-list">
                                 <li class="sub-nav__item"><a href="main.html" class="sub-nav__link">Главная</a></li>
+                                <li class="sub-nav__item"><a href="index.html" class="sub-nav__link">Index</a></li>
                                 <!-- <li class="switch"><a href="#" class="sub-nav__link">Праздник</a>                             -->
                             </ul>
                         </div>
@@ -136,7 +157,7 @@
     <!-- <script src="./js/loginCheck.js"></script> -->
     <script src="./js/logout.js"></script>
     <script src="./js/lists-table.js"></script>
-    <!-- <script src="./js/gir.js"></script> -->
+    <script src="./js/gir.js"></script>
     <script src="./js/multi.js"></script>
 </body>
 </html>

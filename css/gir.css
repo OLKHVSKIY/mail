@@ -1,4 +1,7 @@
 #gir {
+    background-image:url('./img/gir.png');
+}  
+#gir {
     position: absolute;
     top: 0;
     left: 0;

@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Пример функции для загрузки данных (замените на вашу логику загрузки данных)
+    // Пример функции для загрузки данных
     function loadData() {
         console.log('Загрузка данных...');
         fetchMessages('senders').then(() => {
