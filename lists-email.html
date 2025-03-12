@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>МИАЦ | Список email</title>
+    <link rel="icon" href="./img/icons/miac_short.png">
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/modal.css">
+    <link rel="stylesheet" href="./css/search.css">
+    <link rel="stylesheet" href="./css/gir.css">
+    <link rel="stylesheet" href="./css/lists-email.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="gir_1" id="gir"></div>
+        <style>
+            #gir {
+                background-image:url('./img/gir.png');
+            }  
+            #gir {
+                position: absolute;
+                top: 0;
+                left: 0;
+                background-image:url('./img/gir.png');
+                height: 62px;
+                width: 100%;
+                overflow: hidden;
+                z-index: 1;
+                pointer-events: none
+            }  
+            .gir_1 {
+                background-position: 0 0
+            }  
+            .gir_2 {
+                background-position: 0 -62px
+            }  
+            .gir_3 {
+                background-position: 0 -124px
+            }
+        </style>
+
+        <div class="container">
+            <nav class="header__nav nav">
+                <div class="nav__logo">
+                    <a href="#!" class="logo"><img src="./img/icons/miac.png" alt="miac"></a>
+                </div>
+                <ul class="nav-list">
+                    <li class="nav-list__item">
+                        <a href="#furniture" class="nav-list__link nav-list__link--dropdown">Меню</a>
+                        <div class="nav-list__sub-nav">
+                            <ul class="sub-nav" id="sub-nav-list">
+                                <li class="sub-nav__item"><a href="main.html" class="sub-nav__link">Главная</a></li>
+                                <li class="sub-nav__item"><a href="lists.html" class="sub-nav__link">Списки</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-list__item">
+                        <a href="#!" id="apply-filter" class="apply-filter nav-list__link">Обновить таблицу</a>
+                    </li>
+                    <li class="nav-list__item">
+                        <a href="#!" id="logoutButton" class="nav-list__link sort-trigger">Выйти</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="container">
+                <div class="header__content">
+                    <h1 class="header__title">Список email</h1>
+                    <div class="header__search">
+                        <form action="" class="search-form">
+                            <input
+                                id="input-sender"
+                                placeholder="Поиск"
+                                type="text"
+                                class="search-form__input"
+                                autocomplete="off"
+                            />
+                            <button type="button" class="search-form__btn">
+                                <img src="./img/icons/search.svg" alt="Поиск" />
+                            </button>
+                        </form>
+                        <div class="search-results" style="display: none;"></div>
+                    </div>
+                </div>
+        
+                <div class="container-table">
+                    <div class="table-wrapper">
+                        <table id="messages-table" class="centered-table">
+                            <thead>
+                                <tr>
+                                    <th class="sender-recipient-column">Email</th>
+                                </tr>
+                            </thead>
+                            <tbody class="email-list" id="email-list">
+                                <!-- список email  -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        
+            <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+            <script src="./js/logout.js"></script>
+            <script src="./js/lists-table.js"></script>
+            <script src="./js/gir.js"></script>
+            <script src="./js/multi.js"></script>
+
+            <script>
+              const emailData = {
+                "emails": [
+                  "aidscentr.epid@zdrav.spb.ru",
+                  "b33.ako@zdrav.spb.ru",
+                  "B37.aho@zdrav.spb.ru",
+                  "Bnikol.buh@zdrav.spb.ru",
+                  "Bnikol.gemo@zdrav.spb.ru",
+                  "Bnikol.ingenermo@zdrav.spb.ru",
+                  "Bnikol.park@zdrav.spb.ru",
+                  "Bnikol.sthir1@zdrav.spb.ru",
+                  "Bnikol.zavfto@zdrav.spb.ru",
+                  "Bnikol.zavpischeblok@zdrav.spb.ru",
+                  "Bnikol.zavpno@zdrav.spb.ru",
+                  "Bnikol.zavpto@zdrav.spb.ru",
+                  "Bnikol.zhk@zdrav.spb.ru",
+                  "dgp49.medi@zdrav.spb.ru",
+                  "dpo27.vac@zdrav.spb.ru",
+                  "gorkvd.4otd@zdrav.spb.ru",
+                  "gorkvd.6otd@zdrav.spb.ru",
+                  "gornark.prim@zdrav.spb.ru",
+                  "it.p99@zdrav.spb.ru",
+                  "Jk33@zdrav.spb.ru",
+                  "kvd11.gomko@zdrav.spb.ru",
+                  "p102.cdmw@zdrav.spb.ru",
+                  "p109.szi@zdrav.spb.ru",
+                  "p111.OT@zdrav.spb.ru",
+                  "P111.torgi@zdrav.spb.ru",
+                  "p120.ms_kvac@zdrav.spb.ru",
+                  "p123.ovop@zdrav.spb.ru",
+                  "p27.zakupki@zdrav.spb.ru",
+                  "p43.dpo38vgid@zdrav.spb.ru",
+                  "p43.ok3@zdrav.spb.ru",
+                  "P43.zav.oys@zdrav.spb.ru",
+                  "P78.DPO32@zdrav.spb.ru",
+                  "p88.osmp@zdrav.spb.ru",
+                  "ZhuravlevAU.dzkz@zdrav.spb.ru",
+                  "p91.trud@zdrav.spb.ru",
+                  "p96.ekmp@zdrav.spb.ru",
+                  "pd19.gz@zdrav.spb.ru",
+                  "pd19.mstat@zdrav.spb.ru",
+                  "po109.sek@zdrav.spb.ru",
+                  "rd6.aop@zdrav.spb.ru",
+                  "smpkolp.glbuh@zdrav.spb.ru",
+                  "smpkolp.hto@zdrav.spb.ru",
+                  "smpkolp.medzam@zdrav.spb.ru",
+                  "smpkolp.nop@zdrav.spb.ru",
+                  "smpkolp.sa@zdrav.spb.ru",
+                  "smpkolp.stvf@zdrav.spb.ru"
+                ]
+              };
+
+              function renderEmailList(emails) {
+                const emailList = document.getElementById('email-list');
+                emailList.innerHTML = ''; 
+
+                emails.forEach(email => {
+                  const tr = document.createElement('tr');
+                  const td = document.createElement('td');
+                  td.textContent = email;
+                  tr.appendChild(td);
+                  emailList.appendChild(tr);
+                });
+              }
+
+              document.addEventListener('DOMContentLoaded', () => {
+                renderEmailList(emailData.emails);
+              });
+
+              document.getElementById('input-sender').addEventListener('input', function() {
+                const searchTerm = this.value.toLowerCase();
+                const filteredEmails = emailData.emails.filter(email => 
+                  email.toLowerCase().includes(searchTerm)
+                );
+                renderEmailList(filteredEmails);
+              });
+            </script>
+        </body>
+        </html>

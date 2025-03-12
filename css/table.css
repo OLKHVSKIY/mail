@@ -9,7 +9,7 @@
 }
 
 .data-databox-column {
-  width: 70px !important; /* принудительное применение */
+  width: 100px !important; /* принудительное применение */
 }
 
 .sender-recipient-column {
